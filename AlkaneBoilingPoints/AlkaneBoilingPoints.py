@@ -22,4 +22,4 @@ plt.ylabel("Boiling Point (°C)")
 plt.savefig(Path(__file__).resolve().parent / "AlkaneBoilingPoints.png", dpi=300, bbox_inches="tight")
 
 plt.show()
-plt.show()
+
