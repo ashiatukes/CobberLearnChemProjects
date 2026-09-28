@@ -12,7 +12,8 @@ properties = [
     "SMILES",
     "HBondDonorCount",
     "HBondAcceptorCount",
-    "XLogP"
+    "XLogP",
+    "TPSA"
 ]
 
 try:
@@ -28,6 +29,8 @@ try:
         print("H-bond donors:", molecule.get("HBondDonorCount"))
         print("H-bond acceptors:", molecule.get("HBondAcceptorCount"))
         print("XLogP:", molecule.get("XLogP"))
+        print("TPSA:", molecule.get("TPSA"))
+
 
     else:
         print("No molecule found.")
