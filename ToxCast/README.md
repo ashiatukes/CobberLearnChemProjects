@@ -28,3 +28,6 @@ The five assays selected are:
 I chose these because together they give us different types of information instead of repeating the same test. They can show whether a chemical interacts with the estrogen receptor and whether that interaction leads to activity or a response in human cells.
 
 The next step is to look at the amount and quality of data available for each assay before deciding if all five should be included in the final dataset.
+
+Step 3: Challenges and Troubleshooting underneath your existing text.
+I had many challenges that seemed to be on a loop when it came to commit and push. I had to try multiple avenues that led to multiple dead ends. The only way I was able to get it to work was by draggingthe ToxCast folder from my finder window directly to GitHub. 
