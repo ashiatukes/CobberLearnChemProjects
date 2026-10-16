@@ -1,7 +1,11 @@
+# Chapter 6: Molecule Explorer
+# This program uses RDKit to analyze molecules from SMILES strings.
+# It generates molecular structures and calculates chemical properties.
+
 from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem import Descriptors
-
+# Keep the program running so the user can analyze multiple molecules.
 while True:
     smiles = input("Enter a SMILES string: ")
 
@@ -18,10 +22,10 @@ while True:
         logp = Descriptors.MolLogP(molecule)
         rotatable_bonds = Descriptors.NumRotatableBonds(molecule)
 
-        print("Exact Molecular Weight:", exact_mw)
+        print("Exact Molecular Weight:", round(exact_mw, 2))
         print("Hydrogen Bond Donors:", h_bond_donors)
-        print("TPSA:", tpsa)
-        print("LogP:", logp)
+        print("TPSA:", round(tpsa, 2))
+        print("LogP:", round(logp, 2))
         print("Rotatable Bonds:", rotatable_bonds)
 
     again = input("Analyze another molecule? (yes/no): ")
