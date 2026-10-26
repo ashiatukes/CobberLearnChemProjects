@@ -30,10 +30,10 @@ I used carbon count and branch number as the main input variables and trained th
 
 I tested four approaches:
 
-1. **Log-Linear Regression:** Uses a mathematical relationship between molecular structure and the property being predicted.
-2. **K-Nearest Neighbors (KNN):** Makes predictions based on molecules with similar carbon counts and branching patterns. I tested different numbers of neighbors.
-3. **Random Forest:** Uses multiple decision trees to recognize patterns. I compared tree depths of 5 and 15.
-4. **Ensemble:** Combines predictions from multiple models to see whether their combined results improve accuracy.
+1. Log-Linear Regression: Uses a mathematical relationship between molecular structure and the property being predicted.
+2. K-Nearest Neighbors (KNN): Makes predictions based on molecules with similar carbon counts and branching patterns. I tested different numbers of neighbors.
+3. Random Forest: Uses multiple decision trees to recognize patterns. I compared tree depths of 5 and 15.
+4. Ensembleij : Combines predictions from multiple models to see whether their combined results improve accuracy.
 
 I used five-fold cross-validation to test how well the models predicted known measurements.
 
@@ -41,11 +41,11 @@ Model accuracy was measured using Mean Absolute Error (MAE), where a lower value
 
 ## Results
 
-**Viscosity:** Log-linear regression performed best, with an MAE of **0.0109**. The Ensemble model was close behind at 0.0116.
+Viscosity: Log-linear regression performed best, with an MAE of **0.0109**. The Ensemble model was close behind at 0.0116.
 
-**Heat Capacity:** Random Forest with a maximum depth of 15 performed best, with an MAE of **6.9788**. Log-linear regression had much larger errors for this property.
+Heat Capacity: Random Forest with a maximum depth of 15 performed best, with an MAE of **6.9788**. Log-linear regression had much larger errors for this property.
 
-**Thermal Conductivity:** KNN with 10 neighbors was one of the best-performing models, with an MAE of **0.0024**.
+Thermal Conductivity: KNN with 10 neighbors was one of the best-performing models, with an MAE of **0.0024**.
 
 These results showed that different chemical properties benefit from different prediction methods.
 
@@ -104,3 +104,69 @@ Each script evaluates models for its corresponding property. The results appear 
 Chapter 7 demonstrated how machine learning can be used to evaluate methods for estimating missing chemical measurements. By comparing four approaches across three properties, I found that the best-performing model depended on the property being predicted.
 
 The main takeaway was that choosing an imputation method requires more than finding the lowest error. It also involves understanding the data, checking for bias, and making sure the predictions are scientifically reasonable.
+
+## Chapter 12: Evolutionary Algorithms
+
+In Chapter 12, I explored how evolutionary algorithms can solve problems through repeated improvements over time. I recreated the Weasel program in Python using PyCharm to demonstrate how random mutations and selection can gradually produce a target phrase.
+
+The goal was to evolve a randomly generated string into the phrase "METHINKS IT IS LIKE A WEASEL" by selecting changes that improved its fitness score.
+
+
+### How the Algorithm Works
+
+I created a Python program called Weasel.py that uses random mutations and fitness scores to evolve a string of letters.
+
+The program begins with a randomly generated string and compares it to the target phrase.
+
+For each generation, the algorithm:
+
+1. Creates 100 mutated versions of the current string.
+2. Calculates a fitness score based on how many characters match the target phrase.
+3. Selects the version with the highest fitness score.
+4. Keeps the new version only if its fitness score improves.
+5. Repeats until the target phrase is matched or 1,000 generations have been attempted.
+
+A perfect match has a fitness score of 28 out of 28.
+
+
+
+### Results and Fitness Graph
+
+The evolutionary algorithm successfully reached the target phrase, "METHINKS IT IS LIKE A WEASEL," with a final fitness score of 28/28.
+
+The program used:
+- Population size: 100 offspring per generation
+- Mutation probability: 5% per character
+- Maximum generations: 1,000
+- Final fitness: 28/28
+
+The number of generations needed to reach the target varied between runs because mutations were random.
+
+I created a fitness evolution graph using Matplotlib and saved it as fitness_evolution.png.
+
+The graph showed that fitness increased as the algorithm selected better candidates. Some generations showed no improvement, but the overall fitness continued increasing until the target phrase was reached.
+
+This demonstrates how mutation introduces variation while selection preserves improvements.
+
+
+
+### Program Improvements
+
+I made two improvements to the original evolutionary algorithm:
+
+1. **Fitness Tracking:** I added a list called fitness_history to record improvements in the fitness score as the algorithm progressed.
+
+2. **Data Visualization:** I used Matplotlib to create a graph showing how the fitness score increased over time. The graph was saved as fitness_evolution.png.
+
+These additions made it easier to observe and understand how the algorithm gradually improved its results.
+
+### Conclusion
+
+This project helped me understand how evolutionary algorithms use mutation, selection, and fitness scores to solve problems.
+
+By recreating the Weasel program in Python, I demonstrated how repeated selection of better candidates can eventually produce a specific target phrase.
+
+I also gained more experience using Python functions, loops, lists, and Matplotlib to analyze and visualize results.
+
+
+
