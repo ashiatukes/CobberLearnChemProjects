@@ -1,3 +1,5 @@
+from sklearn.tree import plot_tree
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 data = {
@@ -13,7 +15,24 @@ data = {
 }
 
 df = pd.DataFrame(data)
-X = df[["Molecular Weight", "Hydrogen Bond Donors", "Hydrogen Bond Acceptors"]]
+X = df[["Hydrogen Bond Donors"]]
 y = df["Water Solubility"]
 
-print(df)i
+print(df)
+# Create and train the decision tree
+model = DecisionTreeClassifier(max_depth=2, random_state=42)
+model.fit(X, y)
+
+print("\nDecision tree trained successfully!")
+print("Training accuracy:", model.score(X, y))
+plt.figure(figsize=(12, 8))
+
+plot_tree(
+    model,
+    feature_names=X.columns,
+    class_names=["Not Soluble", "Soluble"],
+    filled=True,
+    rounded=True
+)
+plt.savefig("decision_tree_donors_only.png", dpi=300, bbox_inches="tight")
+plt.show()

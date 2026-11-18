@@ -104,7 +104,26 @@ Each script evaluates models for its corresponding property. The results appear 
 Chapter 7 demonstrated how machine learning can be used to evaluate methods for estimating missing chemical measurements. By comparing four approaches across three properties, I found that the best-performing model depended on the property being predicted.
 
 The main takeaway was that choosing an imputation method requires more than finding the lowest error. It also involves understanding the data, checking for bias, and making sure the predictions are scientifically reasonable.
+## Chapter 9: Decision Tree Classification — Water Solubility
 
+### Objective
+The goal of this project was to build and visualize a decision tree classifier that predicts whether a molecule is water-soluble based on its molecular properties.
+
+### Methods
+I created a dataset containing 10 molecules and three molecular features: molecular weight, hydrogen bond donors, and hydrogen bond acceptors. I used Python, pandas, and scikit-learn to train a decision tree classifier and Matplotlib to visualize its predictions.
+
+### Results
+- **Original model:** 100% training accuracy.
+- **Modification 1:** Limited the maximum tree depth to 2, reducing training accuracy to 80%.
+- **Modification 2:** Trained the depth-limited model using only hydrogen bond donors, achieving 90% training accuracy.
+
+### Analysis
+The original decision tree correctly classified all 10 training molecules. Limiting the tree depth simplified the model but reduced its training accuracy. When I trained the model using only hydrogen bond donors, accuracy increased to 90%. This showed me that changing the features and complexity of a decision tree can affect its predictions.
+
+These results describe performance on the training data, not on new molecules.
+
+### Conclusion
+This activity helped me understand how decision trees classify molecules using different chemical properties. I also learned how changing model settings and input features affects the structure and accuracy of the tree.
 ## Chapter 12: Evolutionary Algorithms
 
 In Chapter 12, I explored how evolutionary algorithms can solve problems through repeated improvements over time. I recreated the Weasel program in Python using PyCharm to demonstrate how random mutations and selection can gradually produce a target phrase.
